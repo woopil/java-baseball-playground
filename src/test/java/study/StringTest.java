@@ -9,7 +9,6 @@ public class StringTest {
 
     @Test
     void replace() throws Exception {
-        System.out.println("StringTest.replace");
         String actual = "abc".replace("b", "d");
         assertThat(actual).isEqualTo("adc");
     }
@@ -17,7 +16,6 @@ public class StringTest {
     @Test
     @DisplayName("문자열 자르기")
     void test() throws Exception {
-        System.out.println("StringTest.test");
         // given
         String str = "1,2";
         // when
@@ -29,7 +27,6 @@ public class StringTest {
     @Test
     @DisplayName("문자열 특정위치 자르기")
     void test2() throws Exception{
-        System.out.println("StringTest.test2");
         // given
         String str = "(1,2)";
         // when
@@ -42,7 +39,6 @@ public class StringTest {
     @Test
     @DisplayName("특정 위치 문자 가져오기")
     void test3() throws Exception{
-        System.out.println("StringTest.test3");
         // given
         String str = "abc";
 

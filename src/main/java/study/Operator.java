@@ -15,9 +15,11 @@ enum Operator {
         return first / second;
     });
 
-    private static final Map<String, Operator> operatorMap = Collections.unmodifiableMap(Stream.of(values()).collect(Collectors.toMap(operator -> operator.getSymbol(), operator -> operator)));
+    private static final Map<String, Operator> operatorMap = Collections.unmodifiableMap(
+            Stream.of(values()).collect(Collectors.toMap(Operator::getSymbol, operator -> operator)));
 
     private String symbol;
+
     private BiFunction<Integer, Integer, Integer> operation;
 
     Operator(String symbol, BiFunction<Integer, Integer, Integer> operation) {
@@ -33,11 +35,12 @@ enum Operator {
         return operation.apply(first, second);
     }
 
-    public static Operator findOperator(String symbol){
-
+    public static Operator findOperator(String symbol) {
         Operator operator = operatorMap.get(symbol);
-
-        if(operator == null) throw new IllegalArgumentException();
+        if (operator == null) {
+            throw new IllegalArgumentException();
+        }
         return operator;
     }
+
 }
